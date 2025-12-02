@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KGM MOVERS - Moving Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-truck-moving"></i>
+                <span>KGM MOVERS</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#booking">Book Move</a>
+                <a href="#tracking">Track Job</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#admin" class="admin-btn">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Welcome Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Stress-Free Moving Services</h1>
+                <p>Professional moving services with real-time tracking and upfront pricing</p>
+                <a href="#booking" class="cta-button">Book Your Move Now</a>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-home"></i>
+            </div>
+        </section>
+
+        <!-- Booking Form -->
+        <section id="booking" class="booking-section">
+            <h2><i class="fas fa-calendar-check"></i> Schedule Your Move</h2>
+            <div class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customerName"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="customerName" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="phone" placeholder="(123) 456-7890" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="moveDate"><i class="fas fa-calendar-alt"></i> Move Date</label>
+                        <input type="date" id="moveDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="moveTime"><i class="fas fa-clock"></i> Preferred Time</label>
+                        <select id="moveTime" required>
+                            <option value="">Select Time</option>
+                            <option value="8am">8:00 AM</option>
+                            <option value="9am">9:00 AM</option>
+                            <option value="10am">10:00 AM</option>
+                            <option value="1pm">1:00 PM</option>
+                            <option value="2pm">2:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Pickup Address -->
+                <div class="address-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Pickup Address</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupStreet">Street Address</label>
+                            <input type="text" id="pickupStreet" placeholder="123 Main St" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickupCity">City</label>
+                            <input type="text" id="pickupCity" placeholder="New York" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Address -->
+                <div class="address-section">
+                    <h3><i class="fas fa-flag-checkered"></i> Delivery Address</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="deliveryStreet">Street Address</label>
+                            <input type="text" id="deliveryStreet" placeholder="456 Oak Ave" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryCity">City</label>
+                            <input type="text" id="deliveryCity" placeholder="Boston" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moving Size -->
+                <div class="form-group">
+                    <label for="propertySize"><i class="fas fa-bed"></i> What are you moving?</label>
+                    <div class="size-options">
+                        <div class="size-option" data-size="small" data-price="299">
+                            <i class="fas fa-couch"></i>
+                            <h4>Furniture Only</h4>
+                            <p>Few furniture pieces</p>
+                            <div class="price">From $299</div>
+                        </div>
+                        <div class="size-option active" data-size="1bed" data-price="499">
+                            <i class="fas fa-bed"></i>
+                            <h4>1 Bedroom</h4>
+                            <p>Perfect for apartments</p>
+                            <div class="price">From $499</div>
+                        </div>
+                        <div class="size-option" data-size="2bed" data-price="799">
+                            <i class="fas fa-home"></i>
+                            <h4>2 Bedrooms</h4>
+                            <p>Standard home move</p>
+                            <div class="price">From $799</div>
+                        </div>
+                        <div class="size-option" data-size="3bed" data-price="1099">
+                            <i class="fas fa-building"></i>
+                            <h4>3+ Bedrooms</h4>
+                            <p>Large home move</p>
+                            <div class="price">From $1,099</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="propertySize" value="1bed">
+                    <input type="hidden" id="basePrice" value="499">
+                </div>
+
+                <!-- Additional Services -->
+                <div class="form-group">
+                    <label><i class="fas fa-plus-circle"></i> Additional Services (Optional)</label>
+                    <div class="services-checkboxes">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="service-checkbox" data-price="99" value="packing">
+                            <span>Packing Service (+$99)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="service-checkbox" data-price="149" value="unpacking">
+                            <span>Unpacking Service (+$149)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="service-checkbox" data-price="79" value="storage">
+                            <span>Temporary Storage (+$79)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="service-checkbox" data-price="59" value="fragile">
+                            <span>Fragile Items Handling (+$59)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Special Instructions -->
+                <div class="form-group">
+                    <label for="instructions"><i class="fas fa-comment"></i> Special Instructions</label>
+                    <textarea id="instructions" placeholder="Any special requirements, parking info, elevator access, etc." rows="3"></textarea>
+                </div>
+
+                <!-- Price Summary -->
+                <div class="price-summary">
+                    <h3><i class="fas fa-calculator"></i> Price Estimate</h3>
+                    <div class="price-breakdown">
+                        <div class="price-item">
+                            <span>Base Price:</span>
+                            <span id="basePriceDisplay">$499.00</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Additional Services:</span>
+                            <span id="servicesPrice">$0.00</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Distance Surcharge:</span>
+                            <span id="distancePrice">$0.00</span>
+                        </div>
+                        <div class="price-item total">
+                            <span>Estimated Total:</span>
+                            <span id="totalPrice">$499.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBooking">
+                    <i class="fas fa-check-circle"></i> Confirm Booking ($<span id="finalPrice">499</span>)
+                </button>
+            </div>
+        </section>
+
+        <!-- Live Tracking Section -->
+        <section id="tracking" class="tracking-section">
+            <h2><i class="fas fa-map-marked-alt"></i> Live Job Tracking</h2>
+            <div class="tracking-container">
+                <div class="tracking-info">
+                    <div class="tracking-card">
+                        <h3>Current Job Status</h3>
+                        <div class="status-timeline">
+                            <div class="status-step active">
+                                <div class="step-icon"><i class="fas fa-clipboard-check"></i></div>
+                                <div class="step-info">
+                                    <h4>Booked</h4>
+                                    <p>Job confirmed</p>
+                                </div>
+                            </div>
+                            <div class="status-step">
+                                <div class="step-icon"><i class="fas fa-truck-loading"></i></div>
+                                <div class="step-info">
+                                    <h4>Loading</h4>
+                                    <p>Loading items at pickup</p>
+                                </div>
+                            </div>
+                            <div class="status-step">
+                                <div class="step-icon"><i class="fas fa-truck-moving"></i></div>
+                                <div class="step-info">
+                                    <h4>In Transit</h4>
+                                    <p>On the way to destination</p>
+                                </div>
+                            </div>
+                            <div class="status-step">
+                                <div class="step-icon"><i class="fas fa-box-open"></i></div>
+                                <div class="step-info">
+                                    <h4>Unloading</h4>
+                                    <p>Unloading at destination</p>
+                                </div>
+                            </div>
+                            <div class="status-step">
+                                <div class="step-icon"><i class="fas fa-flag-checkered"></i></div>
+                                <div class="step-info">
+                                    <h4>Completed</h4>
+                                    <p>Job finished</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tracking-card">
+                        <h3>Time & Distance</h3>
+                        <div class="metrics">
+                            <div class="metric">
+                                <i class="fas fa-road"></i>
+                                <div>
+                                    <h4>Distance</h4>
+                                    <p id="liveDistance">25 miles</p>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Time Elapsed</h4>
+                                    <p id="liveTime">2 hours 15 min</p>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-dollar-sign"></i>
+                                <div>
+                                    <h4>Live Cost</h4>
+                                    <p id="liveCost">$625.50</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tracking-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <h3>Live GPS Tracking</h3>
+                        <p>Real-time location updates</p>
+                        <div class="map-points">
+                            <div class="point start">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Pickup</span>
+                            </div>
+                            <div class="point end">
+                                <i class="fas fa-flag"></i>
+                                <span>Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="reviews-section">
+            <h2><i class="fas fa-star"></i> Customer Reviews</h2>
+            <div class="reviews-container">
+                <div class="review-form">
+                    <h3>Leave a Review</h3>
+                    <div class="form-group">
+                        <label for="reviewName">Your Name</label>
+                        <input type="text" id="reviewName" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="star-rating">
+                            <i class="fas fa-star" data-rating="1"></i>
+                            <i class="fas fa-star" data-rating="2"></i>
+                            <i class="fas fa-star" data-rating="3"></i>
+                            <i class="fas fa-star" data-rating="4"></i>
+                            <i class="fas fa-star" data-rating="5"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewText">Your Review</label>
+                        <textarea id="reviewText" placeholder="Share your experience..." rows="4"></textarea>
+                    </div>
+                    <button class="submit-review-btn">Submit Review</button>
+                </div>
+                
+                <div class="reviews-list">
+                    <h3>Recent Reviews</h3>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer">Sarah Johnson</div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Excellent service! The team was professional and careful with all my furniture. Real-time tracking was amazing!"</p>
+                        <div class="review-date">March 15, 2024</div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer">Mike Chen</div>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Very efficient move. The app made scheduling easy and the price was exactly as quoted. Will use again!"</p>
+                        <div class="review-date">March 10, 2024</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section id="admin" class="admin-section">
+            <h2><i class="fas fa-user-cog"></i> Admin Dashboard</h2>
+            <div class="admin-container">
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-calendar"></i>
+                        <h3>Today's Jobs</h3>
+                        <p id="todayJobs">3</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Today's Revenue</h3>
+                        <p id="todayRevenue">$2,450</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Active Customers</h3>
+                        <p id="activeCustomers">8</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-star"></i>
+                        <h3>Avg. Rating</h3>
+                        <p id="avgRating">4.7</p>
+                    </div>
+                </div>
+                
+                <div class="jobs-table">
+                    <h3>Recent Bookings</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>From → To</th>
+                                <th>Size</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="jobsList">
+                            <!-- Jobs will be added here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="admin-controls">
+                    <h3>Quick Actions</h3>
+                    <div class="controls-grid">
+                        <button class="control-btn" id="addJobBtn">
+                            <i class="fas fa-plus"></i> Add Manual Job
+                        </button>
+                        <button class="control-btn" id="updateStatusBtn">
+                            <i class="fas fa-sync"></i> Update Job Status
+                        </button>
+                        <button class="control-btn" id="sendInvoiceBtn">
+                            <i class="fas fa-file-invoice-dollar"></i> Send Invoice
+                        </button>
+                        <button class="control-btn" id="viewReportsBtn">
+                            <i class="fas fa-chart-bar"></i> View Reports
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>KGM MOVERS Services</h3>
+                <p>Professional moving services with real-time tracking</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> (346) 754-4287</p>
+                <p><i class="fas fa-envelope"></i> kgmmovers@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sun: 6AM-6PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#booking">Book a Move</a>
+                <a href="#tracking">Track Job</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#admin">Admin Login</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KGM MOVERS Relocation Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
